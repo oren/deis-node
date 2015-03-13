@@ -21,6 +21,10 @@ func main() {
 
 func hello(w http.ResponseWriter, req *http.Request) {
 	log.Printf("%s %s\n", req.Proto, req.URL)
-	fmt.Fprintln(w, "Welcome to Deis!")
-	fmt.Fprintln(w, "See the documentation at http://docs.deis.io/ for more information.")
+	fmt.Fprintln(w, "We save lives")
+	fmt.Fprintln(w, "By accelerating and enhancing medical research")
+	fmt.Fprintln(w, "How?")
+	fmt.Fprintln(w, "We connect clinical studies to patients")
+	fmt.Fprintln(w, "-------------------")
+	fmt.Fprintln(w, "careers@sanguinebio.com")
 }
