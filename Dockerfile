@@ -1,23 +1,11 @@
-FROM debian:jessie
-MAINTAINER OpDemand <info@opdemand.com>
-
-# install curl
-RUN apt-get update && apt-get install -qy curl
-
-# install go runtime
-RUN curl -s https://storage.googleapis.com/golang/go1.2.2.linux-amd64.tar.gz | tar -C /usr/local -xz
-
-# prepare go environment
-ENV GOPATH /go
-ENV GOROOT /usr/local/go
-ENV PATH $PATH:/usr/local/go/bin:/go/bin
+FROM node:0.10
+RUN useradd -ms /bin/bash developer
+WORKDIR /home/developer
+USER developer
 
 # add the current build context
-ADD . /go/src/github.com/deis/server
+COPY . /home/developer
 
-# compile the binary
-RUN cd /go/src/github.com/deis/server && go install -v .
+EXPOSE 3000
 
-EXPOSE 80
-
-ENTRYPOINT ["/go/bin/server"]
+ENTRYPOINT ["node /home/developer/server.js"]
