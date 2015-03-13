@@ -8,6 +8,6 @@ http.createServer(function (req, res) {
       res.write(data);
       res.end();
   });
-}).listen(3000, '127.0.0.1');
+}).listen(80);
 
 console.log('Server running at http://127.0.0.1:3000');

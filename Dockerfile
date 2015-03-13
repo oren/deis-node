@@ -6,6 +6,6 @@ USER developer
 # add the current build context
 COPY . /home/developer
 
-EXPOSE 3000
+EXPOSE 80
 
-ENTRYPOINT ["node /home/developer/server.js"]
+ENTRYPOINT ["node", "/home/developer/server.js"]
