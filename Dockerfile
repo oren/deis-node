@@ -13,11 +13,11 @@ ENV GOROOT /usr/local/go
 ENV PATH $PATH:/usr/local/go/bin:/go/bin
 
 # add the current build context
-ADD . /go/src/github.com/deis/helloworld
+ADD . /go/src/github.com/deis/server
 
 # compile the binary
-RUN cd /go/src/github.com/deis/helloworld && go install -v .
+RUN cd /go/src/github.com/deis/server && go install -v .
 
 EXPOSE 80
 
-ENTRYPOINT ["/go/bin/helloworld"]
+ENTRYPOINT ["/go/bin/server"]
