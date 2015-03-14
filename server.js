@@ -1,9 +1,12 @@
 var http = require('http');
 var fs = require('fs');
+var path = require('path');
 
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
-  fs.readFile('index.html', function (err, data) {
+  var file = path.resolve(__dirname, 'index.html');
+
+  fs.readFile(file, function (err, data) {
     if (err) throw err;
       res.write(data);
       res.end();
