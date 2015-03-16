@@ -1,16 +1,10 @@
 var http = require('http');
-var fs = require('fs');
+var ecstatic = require('ecstatic')(__dirname + '/');
+// var router = require('routes')();
 var path = require('path');
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  var file = path.resolve(__dirname, 'index.html');
+var server = http.createServer(function (req, res) {
+  ecstatic(req, res)
+});
 
-  fs.readFile(file, function (err, data) {
-    if (err) throw err;
-      res.write(data);
-      res.end();
-  });
-}).listen(80);
-
-console.log('Server running');
+server.listen(80);

@@ -9,7 +9,7 @@ open [http://localhost](http://localhost)
 ## Deploy with Deis - using Dockerfile
 
     ssh-add ~/.ssh/deis
-    deis create
+    deis create careers
     git push deis master
 
 ## Deploy with Deis - using Dockerfile
