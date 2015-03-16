@@ -11,6 +11,8 @@ open [http://localhost](http://localhost)
     ssh-add ~/.ssh/deis
     deis create careers
     git push deis master
+    deis domains:add careers.sanguinebio.com -a careers
+    deis open (open the website in the default browser)
 
 ## Deploy with Deis - using Dockerfile
 
